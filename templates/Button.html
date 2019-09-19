@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
+    <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="https://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+     <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap-slider/9.4.1/css/bootstrap-slider.css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap-slider/9.4.1/bootstrap-slider.min.js"></script>
+
+</head>
+<body>
+    <button  onmousedown="_down()" onmouseup="_move()">前进</button>
+    <button  onmousedown="_down()" onmouseup="_move()">后退</button>
+    <input type="range" name="slider-1" id="slider-1" min="0" max="100" step="1" value="50">
+    <input id="ex4" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/>
+    <script>
+        $("#ex4").slider({
+            reversed : true
+        });
+    </script>
+    <input id="ex13" type="text" data-slider-ticks="[0, 100, 200, 300, 400]" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels='["$0", "$100", "$200", "$300", "$400"]'/>
+    <script>
+        $("#ex13").slider({
+            ticks: [0, 100, 200, 300, 400],
+            ticks_labels: ['$0', '$100', '$200', '$300', '$400'],
+            ticks_snap_bounds: 30
+        });
+    </script>
+<script>
+    var btn = document.getElementsByTagName('button')[0];
+    function _down() {
+        console.log("按下");
+    }
+    function _move() {
+        console.log("弹起");
+    }
+    document.onkeydown = function(event) {
+          var e = event || window.event || arguments.callee.caller.arguments[0];
+          if (e && e.keyCode == 87) { // 按 w / W
+              //要做的事情
+              _down();
+          }
+          if (e && e.keyCode == 113) { // 按 F2
+              //要做的事情
+          }
+          if (e && e.keyCode == 13) { // enter 键
+              //要做的事情
+          }
+      }
+    document.onkeyup = function(event) {
+          var e = event || window.event || arguments.callee.caller.arguments[0];
+          if (e && e.keyCode == 87) { // 按 w / W
+              //要做的事情
+              _move();
+          }
+      }
+    varkey_pressed={};
+
+</script>
+</body>
+</html>

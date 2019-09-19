@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/userinfo" method="post">
+    <p>姓名：<input type="text" name="username"></p>
+    <p>性别：<input type="text" name="sex"></p>
+    <p>邮箱：<input type="text" name="email"></p>
+    <p>提交：<input type="submit" value="Submit"></p>
+</form>
+<h1>数据展示</h1>
+<table>
+    <tr>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>邮箱</td>
+    </tr>
+    {% for i in User_List %}
+        <tr>
+            <td>{{ i.username }}</td>
+            <td>{{ i.sex }}</td>
+            <td>{{ i.email }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
