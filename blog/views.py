@@ -2,6 +2,8 @@ from django.shortcuts import render,HttpResponse
 from blog import models
 import datetime
 # Create your views here. 一个函数对应一个视图
+def index(req):
+    return render(req,'index.html')
 def text(request): #request 是返回的内容
     times = datetime.datetime.now()
     data = {
